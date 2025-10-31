@@ -1,0 +1,436 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    transform-origin: top left;
+    transition: transform 0.2s ease-out;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ========== ХЕДЕР ========== */
+header {
+    width: 100%;
+    height: 75px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 75px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.logo-placeholder {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-placeholder img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    padding-top: 12px;
+    align-items: flex-start;
+}
+
+.register-link,
+.login-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: opacity 0.2s ease;
+}
+
+.register-link { color: #000000; }
+.login-link { color: #989898; }
+
+.register-link:hover,
+.login-link:hover {
+    opacity: 0.7;
+}
+
+/* ========== ЛИНИЯ ========== */
+.line {
+    border-bottom: 1px solid #ECECEC;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* ========== ЗАГОЛОВОК + КНОПКА ========== */
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0; 
+    box-sizing: border-box;
+}
+
+.section-title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+.custom-button-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 60px;
+}
+
+.custom-button {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* === ГАЛЕРЕЯ — 4×3, КВАДРАТНЫЕ КАРТОЧКИ === */
+.gallery-container {
+    width: 100%;
+    height: 895px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin: 40px auto 0;
+    gap: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.card {
+    background: #F5F5F5;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;              
+    transition: transform 0.2s ease;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 16px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 20px;
+    z-index: 3;                      
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.35) 40%,
+        transparent 100%
+    );
+    border-radius: 0 0 16px 16px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* === Показать ещё === */
+.show-more {
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    margin: 40px auto 0;
+    border: 2px solid #369FFF;
+    border-radius: 10px;
+    display: flex;                    
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.text-showmore {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+    color: #369FFF;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0;
+    gap: 10px;
+}
+
+.footer {
+    width: 100%;
+    height: 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    margin: 40px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-email {
+    color: #369FFF;   
+    font-weight: 500;
+}
+
+.footer-info {
+    color: #000000;
+}
+
+/* ========================================
+   ПЛАВНАЯ АДАПТАЦИЯ ПРИ МАСШТАБЕ (ZOOM)
+   ======================================== */
+
+/* === 1398×768 — Планшетный вид === */
+@media 
+    (max-device-width: 1400px) 
+    and (max-device-height: 780px)
+    and (min-device-width: 1350px)
+    and (min-device-height: 750px) {
+
+    body {
+        transform: scale(calc(1398 / 1200));
+    }
+
+    .container {
+        max-width: 1398px;
+        padding: 0 40px;
+    }
+
+    .section-title {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 18px;
+        height: auto;
+        margin-top: 36px;
+        border-radius: 18px;
+    }
+
+    .card p {
+        font-size: 13px;
+        padding: 14px 11px;
+    }
+
+    .card::after {
+        height: 70px;
+    }
+
+    .show-more {
+        height: 56px;
+        margin: 36px auto 0;
+    }
+
+    .custom-button {
+        height: 56px;
+    }
+
+    .header-content {
+        padding-top: 24px;
+    }
+
+    .nav-links {
+        gap: 24px;
+        padding-top: 10px;
+    }
+}
+
+/* === 1252×320 — Мобильный вид === */
+@media 
+    (max-device-width: 1300px) 
+    and (max-device-height: 350px)
+    and (min-device-width: 1200px)
+    and (min-device-height: 300px) {
+
+    body {
+        transform: scale(calc(1252 / 1200));
+    }
+
+    .container {
+        max-width: 1252px;
+        padding: 0 16px;
+    }
+
+    .header-content {
+        padding-top: 16px;
+        height: 56px;
+    }
+
+    .logo-placeholder {
+        height: 28px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        padding-top: 6px;
+    }
+
+    .register-link,
+    .login-link {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .line {
+        margin: 16px 0;
+    }
+
+    .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .custom-button-link {
+        height: 40px;
+        align-self: flex-end;
+    }
+
+    .custom-button {
+        height: 40px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+        border-radius: 12px;
+        height: auto;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .card img {
+        border-radius: 12px;
+    }
+
+    .card p {
+        font-size: 11px;
+        padding: 10px 8px;
+        line-height: 15px;
+    }
+
+    .card::after {
+        height: 50px;
+    }
+
+    .show-more {
+        height: 40px;
+        margin: 20px auto 0;
+        border-radius: 8px;
+        border-width: 1.5px;
+    }
+
+    .text-showmore {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .text-showmore img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        font-size: 11px;
+        margin-top: 20px;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .footer-email {
+        order: 2;
+    }
+
+    .footer-info {
+        order: 1;
+        color: #989898;
+    }
+}
