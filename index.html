@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- ХЕДЕР -->
+        <header>
+            <div class="header-content">
+                <div class="logo-placeholder">
+                    <img src="image/logo.svg" alt="Logo">
+                </div>
+                <div class="nav-links">
+                    <a href="#registerModal" class="register-link">Регистрация</a>
+                    <a href="#loginModal" class="login-link">Вход</a>
+                </div>
+            </div>
+        </header>
+
+        <a href="#" class="modal-overlay"></a>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <!-- Крестик закрытия -->
+                <a href="#" class="close">x</a>
+
+                <!-- Заголовки -->
+                <div class="modal-header">
+                    <h2 class="title-reg"><a href="#registerModal">Регистрация</a></h2>
+                    <h2 class="title-auth active">Авторизация</h2>
+                </div>
+
+                <!-- Поля ввода -->
+                <div class="input-group">
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Пароль" />
+                </div>
+
+                <!-- Кнопка "Войти" — изображение -->
+                <img src="image/beforelogin.svg" alt="Войти" class="login-image" />
+
+                <!-- Важное сообщение — изображение -->
+                <img src="image/important.svg" alt="Все поля обязательны" class="important-msg" />
+            </div>
+        </div>
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content register-content">
+                <a href="#" class="close">x</a>
+
+                <!-- Заголовки с переключением -->
+                <div class="modal-header">
+                    <h2 class="title-reg active">Регистрация</h2>
+                    <h2 class="title-auth"><a href="#loginModal">Авторизация</a></h2>
+                </div>
+
+                <!-- Поля формы -->
+                <div class="register-inputs">
+                    <input type="text" placeholder="Ваше имя" class="full-width" />
+                    <div class="input-row">
+                        <input type="email" placeholder="Email" />
+                        <input type="tel" placeholder="Мобильный телефон" />
+                    </div>
+                    <div class="input-row">
+                        <input type="password" placeholder="Пароль" />
+                        <input type="password" placeholder="Повторите пароль" />
+                    </div>
+                </div>
+
+                <!-- Чекбокс -->
+                <label class="checkbox-label">
+                    <input type="checkbox" />
+                    <span class="checkbox-text">
+                        <span class="text-black">Согласен на обработку</span>
+                        <span class="text-blue"> персональных данных</span>
+                    </span>
+                </label>
+
+                <!-- Кнопка — изображение -->
+                <img src="image/beforeregister.svg" alt="Зарегистрироваться" class="register-image" />
+
+                <!-- Важное сообщение -->
+                <img src="image/important.svg" alt="Все поля обязательны" class="important-msg" />
+            </div>
+        </div>
+
+        <!-- ЛИНИЯ ПОД ХЕДЕРОМ -->
+        <div class="line"></div>
+
+        <!-- ЗАГОЛОВОК + КНОПКА -->
+        <div class="title-row">
+            <h1 class="section-title">Июль, 2022</h1>
+            <a href="#" class="custom-button-link">
+                <img src="image/Button.svg" alt="Добавить скриншот" class="custom-button">
+            </a>
+        </div>
+
+        <!-- ГАЛЕРЕЯ -->
+        <div class="gallery-container">
+            <!-- 12 карточек -->
+            <div class="card">
+                <img src="image/image 3.svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (1).svg" alt="">
+                <p>Добавлено 13 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (2).svg" alt="">
+                <p>Добавлено 18 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (3).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (4).svg" alt="">
+                <p>Добавлено 19 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (5).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (6).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (7).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (8).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (9).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (10).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+            <div class="card">
+                <img src="image/image 3 (11).svg" alt="">
+                <p>Добавлено 15 августа</p>
+            </div>
+        </div>
+
+        <div class="show-more">
+            <div class="text-showmore"><img src="image/Vector 1.svg" alt="">Показать ещё</div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-email">info@gmail.com</div>
+            <div class="footer-info">Информация о разработчике</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

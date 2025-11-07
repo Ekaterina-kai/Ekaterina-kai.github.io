@@ -1,0 +1,753 @@
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+@media(max-width: 1280px){
+    .container{
+        margin: 0 40px;
+    }
+}
+
+/* Мобильная: 20px */
+@media (max-width: 570px) {
+    .container {
+        margin: 0 20px;
+    }
+}
+
+
+
+/* ==================== ХЕДЕР ==================== */
+header {
+    height: 75px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+    height: 75px;
+    box-sizing: border-box;
+}
+
+/* ЛОГО — ДЕСКТОП */
+.logo-placeholder img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* ЛОГО — МОБИЛЬНАЯ */
+@media (max-width: 570px) {
+    .logo-placeholder img {
+        content: url('image/logo-mobile.svg');
+        height: 40px;
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    padding-top: 12px;
+    flex-shrink: 0;
+}
+
+.register-link,
+.login-link {
+    font-size: 16px;
+    text-decoration: none;
+    transition: opacity .2s;
+}
+
+.register-link {
+    color: #000;
+}
+
+.login-link {
+    color: #989898;
+}
+
+.register-link:hover,
+.login-link:hover {
+    opacity: .7;
+}
+
+/* ==================== ЛИНИЯ ==================== */
+.line {
+    border-bottom: 1px solid #ECECEC;
+    margin: 30px 0;
+}
+
+/* ==================== ЗАГОЛОВОК + КНОПКА (МОБИЛЬНАЯ: ОДНА СТРОКА) ==================== */
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(36px, 6vw, 48px);
+    line-height: 1.25;
+    transition: font-size 0.2s ease, line-height 0.2s ease;
+}
+
+@media (max-width: 900px) {
+    .section-title {
+        line-height: 1.2;
+    }
+}
+
+/* КНОПКА "ДОБАВИТЬ" — ДЕСКТОП */
+.custom-button-link {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.custom-button-link img {
+    height: 60px;
+}
+
+/* КНОПКА "ДОБАВИТЬ" — МОБИЛЬНАЯ */
+@media (max-width: 570px) {
+    .custom-button-link img {
+        content: url('image/Button-mobile.svg');
+        height: 44px;
+    }
+}
+
+/* ==================== ГАЛЕРЕЯ ==================== */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    background: #fff;
+    border-radius: 20px;
+    margin: 40px auto 0;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+/* ДЕСКТОП: 4×3 */
+@media (min-width: 901px) {
+    
+    .card {
+        height: 285px;
+        width: 285px;
+    }
+}
+
+/* ПЛАНШЕТ: 3×4 */
+@media (max-width: 900px) and (min-width: 480px) {
+    .gallery-container {
+        gap: 18px;
+        margin-top: 36px;
+        justify-content: space-between;
+    }
+    
+    .card {
+        width: 216px;
+        height: 216px;
+    }
+
+    .card p {
+        font-size: 13px;
+        padding: 14px 12px;
+    }
+
+    
+}
+
+/* МОБИЛЬНАЯ: ПЛАВНЫЕ КАРТОЧКИ */
+@media (max-width: 570px) {
+    .container{
+        margin: 0 20px;
+    }
+
+
+    .gallery-container {
+        gap: 12px;
+        background: transparent;
+        margin: 20px auto 0;
+        justify-content: space-between;
+    }
+    
+    .card {
+        width: 134px;
+        height: 134px;
+        border-radius: 12px;
+        aspect-ratio: 1/1;
+        background: #F5F5F5;
+        overflow: hidden;
+        position: relative;
+        transition: transform .2s;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+    }
+
+    .card p {
+        font-size: 11px;
+        padding: 8px 6px;
+        line-height: 14px;
+    }
+
+   
+}
+
+
+/* КАРТОЧКА — БАЗОВЫЕ СТИЛИ */
+.card {
+    aspect-ratio: 1/1;
+    background: #F5F5F5;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: transform .2s;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.card p {
+    position: absolute;
+    inset: auto 0 0 0;
+    margin: 0;
+    padding: 16px 12px;
+    font: 500 14px/20px 'Inter', sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ==================== КНОПКА "ПОКАЗАТЬ ЕЩЁ" ==================== */
+.show-more {
+    height: 60px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    border: 2px solid #369FFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.text-showmore {
+    font-weight: 600;
+    font-size: 13px;
+    color: #369FFF;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* ==================== ФУТЕР ==================== */
+.footer {
+    margin: 40px auto 0;
+    height: 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-email {
+    color: #369FFF;
+    font-weight: 500;
+}
+
+/* ==================== МОБИЛЬНАЯ АДАПТАЦИЯ (≤570px) ==================== */
+@media (max-width: 570px) {
+    .header-content {
+        padding-top: 16px;
+        height: 56px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        padding-top: 6px;
+    }
+
+    .register-link,
+    .login-link {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .line {
+        margin: 16px 0;
+    }
+
+    .title-row {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .custom-button-link {
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    .show-more {
+        height: 40px;
+        border-width: 1.5px;
+        border-radius: 8px;
+        padding: 0 16px;
+        min-width: 180px;
+    }
+
+    .text-showmore {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .text-showmore img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        height: auto;
+        padding: 16px 0;
+        margin-top: 32px;
+    }
+
+    .footer-email {
+        order: 1;
+        color: #369FFF;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .footer-info {
+        order: 2;
+        color: #989898;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer {
+        gap: 8px;
+        font-size: 11px;
+        padding: 10px 0;
+    }
+}
+
+
+
+/* ==================== МОДАЛКИ — ОБЩИЕ СТИЛИ ==================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#loginModal:target,
+#registerModal:target,
+#loginModal:target ~ .modal-overlay,
+#registerModal:target ~ .modal-overlay {
+    display: block;
+}
+
+/* === КОНТЕЙНЕР МОДАЛКИ === */
+.modal-content {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* === КНОПКА ЗАКРЫТИЯ === */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* === ЗАГОЛОВКИ ВКЛАДОК === */
+.modal-header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.modal-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.title-reg,
+.title-auth {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    color: #999;
+}
+
+.title-reg.active,
+.title-auth.active {
+    color: #000;
+}
+
+/* ==================== ДЕСКТОП + ПЛАНШЕТ (≥571px) — УВЕЛИЧЕНЫ ОТСТУПЫ ==================== */
+@media (min-width: 571px) {
+    .modal {
+        width: 80%;
+    }
+
+    .modal-content {
+        max-width: 600px;
+        padding: 40px;
+    }
+
+    /* АВТОРИЗАЦИЯ */
+    .login-content {
+        width: 100%;
+        min-height: 349px;
+    }
+
+    input {
+        margin-top: 10px;
+    }
+
+    .input-group {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    .title-reg,
+    .title-auth {
+        font-size: px;
+    }
+
+    .input-group input {
+        flex: 1;
+        height: 60px;
+        padding: 0 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .input-group input::placeholder {
+        color: #aaa;
+    }
+
+    .login-image {
+        width: 100%;
+        max-width: 520px;
+        height: 60px;
+        margin: 32px auto;
+        border-radius: 10px;
+        opacity: 0.3;
+        display: block;
+    }
+
+    /* РЕГИСТРАЦИЯ */
+    .register-content {
+        width: 100%;
+        min-height: 549px;
+    }
+
+    .register-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        margin-bottom: 24px;
+    }
+
+    .full-width,
+    .input-row input {
+        height: 60px;
+        padding: 0 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .input-row {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .input-row input {
+        flex: 1;
+        width: 0;
+    }
+
+    .checkbox-label {
+        margin: 24px 0 20px;
+    }
+
+    .register-image {
+        width: 100%;
+        max-width: 520px;
+        height: 60px;
+        margin: 24px auto 32px;
+        border-radius: 10px;
+        opacity: 0.3;
+        display: block;
+    }
+}
+
+/* ==================== МОБИЛЬНАЯ ВЕРСИЯ (≤570px) — БОЛЬШЕ ОТСТУПОВ ==================== */
+@media (max-width: 570px) {
+    .modal {
+        width: 95%;
+        padding: 16px;
+    }
+
+    .modal-content {
+        padding: 32px 24px;
+        border-radius: 16px;
+    }
+
+    .modal-header {
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .title-reg,
+    .title-auth {
+        font-size: 20px;
+    }
+
+    /* === АВТОРИЗАЦИЯ === */
+    .login-content {
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .input-group input {
+        width: 100%;
+        height: 56px;
+        padding: 0 18px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .input-group input::placeholder {
+        color: #aaa;
+    }
+
+    .login-image {
+        width: 100%;
+        height: 56px;
+        margin: 32px auto;
+        border-radius: 10px;
+        opacity: 0.3;
+    }
+
+    /* === РЕГИСТРАЦИЯ === */
+    .register-content {
+        width: 100%;
+    }
+
+    .register-inputs {
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .full-width,
+    .input-row input {
+        width: 100%;
+        height: 56px;
+        padding: 0 18px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .register-image {
+        width: 100%;
+        height: 56px;
+        margin: 24px auto 32px;
+        border-radius: 10px;
+        opacity: 0.3;
+    }
+
+    .checkbox-label {
+        justify-content: flex-start;
+        font-size: 13px;
+        margin: 20px 0 24px;
+        gap: 8px;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
+
+    .important-msg {
+        font-size: 12px;
+        text-align: center;
+        margin: 20px auto 0;
+        line-height: 1.4;
+    }
+}
+
+/* ==================== ОБЩИЕ ЭЛЕМЕНТЫ (ВСЕ ЭКРАНЫ) ==================== */
+.checkbox-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-text {
+    color: #000;
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-blue {
+    color: #369FFF;
+}
+
+.important-msg {
+    display: block;
+    margin: 0 auto;
+    height: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+}
+
+/* КНОПКА "ЗАРЕГИСТРИРОВАТЬСЯ" — ОБЩАЯ */
+.modal-content button,
+.modal-content .btn {
+    width: 100%;
+    height: 60px;
+    background: #369FFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.modal-content button:hover,
+.modal-content .btn:hover {
+    background: #2a8ce6;
+}
+
+@media (max-width: 570px) {
+    .modal-content button,
+    .modal-content .btn {
+        height: 56px;
+        font-size: 15px;
+        margin-top: 28px;
+    }
+}
+
