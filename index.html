@@ -26,68 +26,81 @@
 
         <a href="#" class="modal-overlay"></a>
 
+        <!-- АВТОРИЗАЦИЯ -->
         <div id="loginModal" class="modal">
             <div class="modal-content">
-                <!-- Крестик закрытия -->
                 <a href="#" class="close">x</a>
-
-                <!-- Заголовки -->
                 <div class="modal-header">
                     <h2 class="title-reg"><a href="#registerModal">Регистрация</a></h2>
-                    <h2 class="title-auth active">Авторизация</h2>
+                    <h2 class="title-auth active"><a href="#loginModal">Авторизация</a></h2>
                 </div>
 
-                <!-- Поля ввода -->
-                <div class="input-group">
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Пароль" />
-                </div>
+                <form class="form-auth" novalidate>
+                    <div class="input-grid auth-input-grid">
+                        <div class="input-wrap">
+                            <input type="email" placeholder=" " required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(ru|com|org|net|info)$" />
+                            <label>Email</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="password" placeholder=" " required minlength="6" />
+                            <label>Пароль</label>
+                        </div>
+                    </div>
 
-                <!-- Кнопка "Войти" — изображение -->
-                <img src="image/beforelogin.svg" alt="Войти" class="login-image" />
-
-                <!-- Важное сообщение — изображение -->
-                <img src="image/important.svg" alt="Все поля обязательны" class="important-msg" />
+                    <button type="submit" class="btn">Войти</button>
+                    <p class="hint">Все поля обязательны для заполнения</p>
+                </form>
             </div>
         </div>
 
+        <!-- РЕГИСТРАЦИЯ -->
         <div id="registerModal" class="modal">
             <div class="modal-content register-content">
                 <a href="#" class="close">x</a>
-
-                <!-- Заголовки с переключением -->
                 <div class="modal-header">
-                    <h2 class="title-reg active">Регистрация</h2>
+                    <h2 class="title-reg active"><a href="#registerModal">Регистрация</a></h2>
                     <h2 class="title-auth"><a href="#loginModal">Авторизация</a></h2>
                 </div>
 
-                <!-- Поля формы -->
-                <div class="register-inputs">
-                    <input type="text" placeholder="Ваше имя" class="full-width" />
-                    <div class="input-row">
-                        <input type="email" placeholder="Email" />
-                        <input type="tel" placeholder="Мобильный телефон" />
+                <form class="form-register" novalidate>
+                    <div class="input-wrap">
+                        <input type="text" placeholder=" " required />
+                        <label>Ваше имя</label>
                     </div>
-                    <div class="input-row">
-                        <input type="password" placeholder="Пароль" />
-                        <input type="password" placeholder="Повторите пароль" />
+
+                    <div class="input-grid">
+                        <div class="input-wrap">
+                            <input type="email" placeholder=" " required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(ru|com|org|net|info)$" />
+                            <label>Email</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="tel" placeholder=" " required pattern="^\+7\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$" />
+                            <label>Мобильный телефон</label>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Чекбокс -->
-                <label class="checkbox-label">
-                    <input type="checkbox" />
-                    <span class="checkbox-text">
-                        <span class="text-black">Согласен на обработку</span>
-                        <span class="text-blue"> персональных данных</span>
-                    </span>
-                </label>
+                    <div class="input-grid">
+                        <div class="input-wrap">
+                            <input type="password" placeholder=" " required minlength="6" />
+                            <label>Пароль</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="password" placeholder=" " required minlength="6" />
+                            <label>Повторите пароль</label>
+                        </div>
+                    </div>
 
-                <!-- Кнопка — изображение -->
-                <img src="image/beforeregister.svg" alt="Зарегистрироваться" class="register-image" />
+                    <label class="checkbox-label">
+                        <input type="checkbox" required />
+                        <span class="checkbox-text">
+                            <span class="text-black">Согласен на обработку</span>
+                            <span class="text-blue"> персональных данных</span>
+                        </span>
+                    </label>
 
-                <!-- Важное сообщение -->
-                <img src="image/important.svg" alt="Все поля обязательны" class="important-msg" />
+                    <button type="submit" class="btn">Зарегистрироваться</button>
+                    <p class="hint">Все поля обязательны для заполнения</p>
+                </form>
             </div>
         </div>
 
